@@ -1,0 +1,81 @@
+.file-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.file {
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  margin-left: 15px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .file-name {
+    word-wrap: break-word;
+  }
+
+  .file-menu {
+    display: flex;
+    justify-content: flex-end;
+
+    & > * {
+      cursor: pointer;
+
+      &.select:hover {
+        color: #27ae60;
+      }
+
+      &.delete:hover {
+        color: #d94200;
+      }
+    }
+  }
+
+  &.active {
+    background: #d94200;
+    color: white;
+
+    .file-menu > *:hover {
+      color: white
+    }
+  }
+
+  &.upload {
+    position: relative;
+
+    .add-text {
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 5px;
+      left: 0;
+    }
+
+    .add-button {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      i {
+        font-size: 25px;
+        transition: transform 50ms;
+      }
+
+      input[type='file'] {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        cursor: pointer;
+      }
+    }
+  }
+}

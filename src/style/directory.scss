@@ -1,0 +1,71 @@
+#vis-dir-container {
+  .click {
+    color: blue;
+    text-decoration: underline;
+}
+
+.terug {
+    background-color: rgb(247, 245, 245);
+    border-width: 1px;
+    color: #666;
+    border-style: solid;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    border-color: red;
+}
+
+.terug:hover {
+    background-color: yellowgreen;
+}
+
+.node > span:hover {
+    background-color: yellowgreen !important;
+}
+
+div.node:hover > span{
+    background-color: rgb(224, 255, 102);
+}
+
+div.node:hover{
+    border-left-color: rgb(174, 201, 121);
+}
+
+.node > span {
+    background-color: rgb(247, 245, 245);
+    border-width: 1px;
+    color: #666;
+    border-style: solid;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    width: 100%;
+}
+
+.node[klap="uit"] > span::before {
+    font-size: 80%;
+    content: "\25BC ";
+}
+
+.node:not([leaf="0"]) > span {
+    border-color: red;
+}
+.node[leaf="0"] > span {
+    border-color: black;
+}
+
+.node[klap="in"]:not([leaf="0"]) > span::before{
+    font-size: 80%;
+    content: "\25B6 ";
+}
+
+.node {
+    margin-top: 2px;
+    border-left: lightgray solid 1px;
+    border-radius: 5px;
+}
+.node div {
+    margin-left: 10px;
+}
+
+}

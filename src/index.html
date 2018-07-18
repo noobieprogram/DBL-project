@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>DBL HTI + Webtech</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
+  <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="container-fullwidth">
+
+    <div class="header-wrapper">
+      <nav class="navbar navbar-light bg-primary">
+        <div class="text-logo">
+          <div class="col-4 line">
+            <hr>
+          </div>
+          <div class="col-4 logo text-center">
+            <div>DBL HTI + Webtech</div>
+            <div id="loading-container"></div>
+          </div>
+          <div class="col-4 line">
+            <hr>
+          </div>
+        </div>
+      </nav>
+
+      <div class="jumbotron">
+        <!-- Here are all the files and the upload button - Daan Hegger -->
+        <div class="file-container">
+          <div class="file upload">
+            <div class="add-text">Upload</div>
+            <div class="add-button">
+              <input type="file" id="file-uploader">
+              <i class="material-icons">add_circle</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <!-- Display errors/messages here - Daan Hegger -->
+      <div id="messages"></div>
+
+      <!-- Grid for visualisations -->
+      <div class="row">
+
+        <!-- SunBurst -->
+        <div class="col-sm-12 col-md-6">
+          <div class="card mb-4">
+            <div class="card-header">
+              <h2>SunBurst</h2>
+              <i class="material-icons help sunburst">help</i>
+            </div>
+            <div class="card-body">
+              <div id="vis1-container"></div>
+              <label for="usecolorssunburst"><input type="checkbox" id="usecolorssunburst" checked> Use colors to seperate branches</label><br>
+              <label for="uselabelssunburst"><input type="checkbox" id="uselabelssunburst" checked> Show labels (auto hidden for large dataset to improve visibility)</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Directory Structure -->
+        <div class="col-sm-12 col-md-6">
+          <div class="card mb-4">
+            <div class="card-header">
+              <h2>Directory Structure</h2>
+              <i class="material-icons help directory">help</i>
+            </div>
+            <div class="card-body" id="vis-dir-container"></div>
+          </div>
+        </div>
+
+        <!-- Hexagrid -->
+        <div class="col-sm-12 col-md-6">
+          <div class="card mb-4">
+            <div class="card-header">
+              <h2>Hexagrid</h2>
+              <i class="material-icons help hexagrid">help</i>
+            </div>
+            <div class="card-body">
+              <form>
+          			<input type="button" value="Details" onClick="toggleButton('details');"/>
+          		</form>
+          		<form>
+          			<input type="button" value="Make subtree" onClick="toggleButton('makeSubtree');"/>
+          		</form>
+          				<form>
+          			<input type="button" value="Show and Hide" onClick="toggleButton('showHide');"/>
+          		</form>
+          		<form>
+          			<input type="button" value="Highlight" onClick="toggleButton('highlight');"/>
+          		</form>
+              <canvas id="hexagrid-canvas" width="800" height="800">
+                  This text is displayed if your browser does not support HTML5 Canvas.
+              </canvas>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Tree -->
+        <div class="col-sm-12 col-md-6">
+          <div class="card mb-4">
+            <div class="card-header">
+              <h2>Fractal Tree</h2>
+              <i class="material-icons help tree">help</i>
+            </div>
+            <div class="card-body">
+              <canvas id="tree" height="500"></canvas>
+              <input type="color"  value='#c6e6ff' id="backColor">
+              <input type="color" value='#db9a1e' id="treeColor">
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </main>
+    <!--Footer-->
+    <footer class="page-footer font-small blue pt-4 mt-4">
+      <!--Copyright-->
+      <div class="footer-copyright py-3 text-center">
+        <h2>Created by:</h2>
+        <ul style="list-style:none;">
+          <li>Daan Hegger (Scrum master)</li>
+          <li>Pieter Jacobs</li>
+          <li>Paul Kabo</li>
+          <li>Rik Nietsch</li>
+          <li>Mattijs Schotsmans</li>
+          <li>Abdullah Saeed</li>
+        </ul>
+        <p class="p-4 w-50" style="margin:auto">Welcome! This is a data visualization tool, developed by students. It supports Newick format, so you can upload a file containing Newick dataset (.txt, .tre, .nw) and it will render four visualizations on your screen. All of the visualizations are interactive - if you click on "?" you can see the possible interactions. Enjoy!</p>
+      </div>
+      <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+  </div>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+  <script src="tree.js"></script> -->
+  <script src="bundle.js"></script>
+</body>
+
+</html>

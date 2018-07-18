@@ -1,0 +1,94 @@
+// -- Variable Overrides for bootstrap --
+
+//Change background
+$body-bg: #ededed;
+//Change theme colors
+$theme-colors: (
+  "primary": #d94200
+);
+
+// -- Import Bootstrap Sass Files --
+@import "node_modules/bootstrap/scss/bootstrap";
+
+/*
+Changes yet to made:
+Custom header(line,text,line)
+Change colums to executable scripts
+*/
+
+.header-wrapper {
+  background-color: #d94200;
+}
+
+nav {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  .text-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .logo {
+      color: #fff;
+      font-weight: 800;
+      font-size: 14pt;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .line {
+      padding-top: 20px;
+      white-space: no-wrap;
+      overflow: hidden;
+      text-align: center;
+    }
+  }
+}
+
+hr {
+  border-color: white;
+}
+//Change field under header
+.jumbotron {
+  background-color: #000;
+  border-radius: 0;
+  border-top-left-radius: 250px;
+  padding-left: 100px;
+}
+
+main {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+//White text in jumbotron
+.display-4 {
+  color: #ededed;
+}
+//Visualization colors
+.card-header,  {
+  background-color: #dd6f5a;
+  color: #ededed;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-body {
+  background-color: lighten(#dd6f5a, 6%);
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+.help {
+  cursor: pointer;
+}
+
+
+
+@import "file-upload";
+@import "directory";
+@import "hexagrid";
+@import "tree";
+@import "loading";
